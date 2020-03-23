@@ -10,5 +10,13 @@
             service:
                     name: docker
                     state: started
+          - name: Install the apache server
+            yum:
+                    name: httpd
+                    state: present
+          - name: Start the apache server
+            service:
+                    name: httpd
+                    state: started
 ...
 
