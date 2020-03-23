@@ -18,5 +18,11 @@
             service:
                     name: httpd
                     state: started
+          - name: Getting the apache server status
+            command: service httpd status
+            register: httpd_status
+          - name: httpd status output
+            debug:
+                    var: httpd_status
 ...
 
