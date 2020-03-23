@@ -1,0 +1,14 @@
+---
+- hosts: web
+  become: True
+  tasks:
+          - name: Install the Docker
+            yum:
+                    name: docker
+                    state: present
+          - name: start the docker service
+            service:
+                    name: docker
+                    state: start
+...
+
