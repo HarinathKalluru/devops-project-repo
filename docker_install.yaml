@@ -9,6 +9,6 @@
           - name: start the docker service
             service:
                     name: docker
-                    state: start
+                    state: started
 ...
 
