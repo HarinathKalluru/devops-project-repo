@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  #become: True
+  tasks:
+          - name: Getting the nodes list from the kubernets
+            command: "kubectl get nodes -o wide"
+            register: node_status
+          - name: Printing the node status
+            debug:
+                    var: node_status
+...
