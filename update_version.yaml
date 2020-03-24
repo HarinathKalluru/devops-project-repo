@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  tasks:
+          - name: Update the nginx app version from 1.14.2 to 1.14.3
+            command: "kubectl set image deploy nginx nginx-container=nginx:1.14.3"
+           - name: Getting the status of deployment
+            command: "kubectl get deploy -l app=nginx"
+            register: deploy_status
+          - name: Deploy status output
+            debug:
+                    var: deploy_status
+...
