@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  tasks:
+          - name: Deploy the nginx-server into Pod
+            command: "kubectl create -f /home/ec2-user/devops_project/test/devops-project-repo/deploy_create.yaml"
+          - name: Getting the status of deployment
+            command: "kubectl get deploy -l app=nginx"
+            register: deploy_status
+          - name: Deploy status output
+            debug:
+                    var: deploy_status
+...
